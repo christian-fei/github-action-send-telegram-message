@@ -1,8 +1,8 @@
 FROM node:12
 
-COPY ./src /action
+COPY ./ /action
 
-ENTRYPOINT ["/action/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 
 LABEL "com.github.actions.name"="send-telegram-message"
 LABEL "com.github.actions.description"="Send a Telegram message in a GitHub Action"
