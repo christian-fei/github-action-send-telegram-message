@@ -1,0 +1,10 @@
+name: 'send-telegram-message'
+description: 'Send a Telegram message '
+inputs:
+  message:
+    description: 'The message you want to send to a Telegram chat'
+    required: true
+    default: 'Run with send-telegram-message GitHub action'
+runs:
+  using: 'node12'
+  main: 'index.js'
