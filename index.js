@@ -11,11 +11,11 @@ async function main () {
     const message = core.getInput('message')
     console.log(`Sending message "${message}"`)
 
-    sendMessageFor(process.env.TELEGRAM_TOKEN, process.env.TELEGRAM_CHAT_ID || process.env.TELEGRAM_CHANNEL)(message)
+    await sendMessageFor(process.env.TELEGRAM_TOKEN, process.env.TELEGRAM_CHAT_ID || process.env.TELEGRAM_CHANNEL)(message)
 
     // Get the JSON webhook payload for the event that triggered the workflow
-    const serializedPayload = JSON.stringify(github.context.payload, undefined, 2)
-    console.log(`The event payload: ${serializedPayload}`)
+    // const serializedPayload = JSON.stringify(github.context.payload, undefined, 2)
+    // console.log(`The event payload: ${serializedPayload}`)
   } catch (error) {
     core.setFailed(error.message)
   }
